@@ -3,7 +3,6 @@ const ctx = canvas.getContext("2d");
 
 const timeDisplay = document.getElementById("time-display");
 const startPauseButton = document.getElementById("start-pause");
-const resetButton = document.getElementById("reset");
 const minutesInput = document.getElementById("minutes");
 const secondsInput = document.getElementById("seconds");
 const timeInputs = document.querySelector(".time-inputs");
@@ -101,7 +100,10 @@ function smoothCountdown() {
   } else {
     clearInterval(timerInterval);
     running = false;
-    startPauseButton.textContent = "▶";
+    startPauseButton.innerHTML = `
+      <svg viewBox="0 0 100 100">
+        <polygon points="30,20 80,50 30,80" fill="none" stroke="black" stroke-width="4"></polygon>
+      </svg>`;
     showControls(); // Reappear controls when the motion ends
     drawTimer(1); // Ensure final state overlaps perfectly
   }
@@ -123,7 +125,10 @@ startPauseButton.addEventListener("click", () => {
   if (running) {
     clearInterval(timerInterval);
     running = false;
-    startPauseButton.textContent = "▶";
+    startPauseButton.innerHTML = `
+      <svg viewBox="0 0 100 100">
+        <polygon points="30,20 80,50 30,80" fill="none" stroke="black" stroke-width="4"></polygon>
+      </svg>`;
     showControls();
   } else {
     const minutes = parseInt(minutesInput.value || "0", 10);
@@ -136,7 +141,15 @@ startPauseButton.addEventListener("click", () => {
 
     if (timeLeft > 0) {
       running = true;
-      startPauseButton.textContent = "⏸";
+      startPauseButton.innerHTML = `
+        <svg viewBox="0
+
+javascript
+코드 복사
+        <svg viewBox="0 0 100 100">
+          <rect x="25" y="20" width="20" height="60" fill="none" stroke="black" stroke-width="4"></rect>
+          <rect x="55" y="20" width="20" height="60" fill="none" stroke="black" stroke-width="4"></rect>
+        </svg>`;
       hideControls();
       timerInterval = setInterval(() => {
         timeLeft -= frameInterval / 1000;
@@ -145,18 +158,6 @@ startPauseButton.addEventListener("click", () => {
       }, frameInterval);
     }
   }
-});
-
-// Reset Timer
-resetButton.addEventListener("click", () => {
-  clearInterval(timerInterval);
-  running = false;
-  timeLeft = 0;
-  totalTime = 0;
-  updateTimeDisplay();
-  drawTimer(0);
-  showControls();
-  startPauseButton.textContent = "▶";
 });
 
 // Initialize Timer
