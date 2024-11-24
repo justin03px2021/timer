@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: white; /* Pure white background */
+}
+  
+.container {
+    text-align: center;
+}
+  
+#time-display {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+  
+canvas {
+    margin: 20px 0;
+}
+  
+.time-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+  
+.time-inputs input {
+    width: 60px;
+    text-align: center;
+    font-size: 24px;
+    padding: 10px 0; /* Adjust vertical padding for centering */
+    border: 2px solid black; /* Black outline for inputs */
+    border-radius: 5px;
+    background-color: transparent; /* Ensure background matches the main page */
+}
+  
+.time-inputs span {
+    font-size: 24px;
+    align-self: center;
+}
+  
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+  
+.control-button {
+    width: 60px;
+    height: 60px;
+    background-color: transparent; /* No background color */
+    border: 2px solid black; /* Black outline matching input fields */
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: none; /* Remove shadow */
+    transition: all 0.2s ease; /* Smooth transition on hover/active */
+    outline: none; /* Completely removes focus outline */
+}
+  
+.control-button svg {
+    display: block;
+    width: 36px; /* Adjusted size to fit inside the button */
+    height: 36px;
+    fill: transparent; /* Transparent fill */
+    stroke: black; /* Black outline for shapes */
+    stroke-width: 2; /* Stroke width matches button border width */
+}
+  
+.control-button:hover {
+    background-color: transparent; /* No hover background */
+    border-color: gray; /* Slightly lighter outline on hover */
+}
+  
+.control-button:active {
+    background-color: transparent; /* No active background */
+    border-color: black; /* Retain black outline on active */
+}
