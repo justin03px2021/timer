@@ -6,80 +6,86 @@ body {
     height: 100vh;
     margin: 0;
     background-color: white; /* Pure white background */
-}
+  }
   
-.container {
+  .container {
     text-align: center;
-}
+  }
   
-#time-display {
+  #time-display {
     font-size: 48px;
     font-weight: bold;
     margin-bottom: 20px;
-}
+  }
   
-canvas {
+  canvas {
     margin: 20px 0;
-}
+  }
   
-.time-inputs {
+  .time-inputs {
     display: flex;
     justify-content: center;
     gap: 5px;
     margin-bottom: 20px;
-}
+  }
   
-.time-inputs input {
-    width: 60px;
-    text-align: center;
-    font-size: 24px;
-    padding: 10px 0; /* Adjust vertical padding for centering */
-    border: 2px solid black; /* Black outline for inputs */
-    border-radius: 5px;
-    background-color: transparent; /* Ensure background matches the main page */
-}
+  .time-inputs input {
+    width: 80px; /* Adequate width */
+    height: 60px; /* Fixed height */
+    text-align: center; /* Horizontally align numbers */
+    font-size: 28px; /* Larger font size */
+    border: none; /* Removed border */
+    border-radius: 5px; /* Optional rounded corners */
+    background-color: transparent; /* Transparent background */
+    box-sizing: border-box;
   
-.time-inputs span {
-    font-size: 24px;
+    /* Remove arrows for all browsers */
+    appearance: none; 
+    -webkit-appearance: none; /* Chrome/Safari */
+    -moz-appearance: textfield; /* Firefox */
+    padding: 0; /* Reset padding */
+    line-height: 60px; /* Vertically align numbers */
+  }
+  
+  .time-inputs span {
+    font-size: 28px; /* Font size matching inputs */
     align-self: center;
-}
+  }
   
-.controls {
+  .controls {
     display: flex;
     justify-content: center;
     gap: 10px;
-}
+  }
   
-.control-button {
-    width: 60px;
-    height: 60px;
-    background-color: transparent; /* No background color */
-    border: 2px solid black; /* Black outline matching input fields */
-    border-radius: 10px; /* Rounded corners */
-    cursor: pointer;
+  .control-button {
+    width: 100px; /* Enlarged button size */
+    height: 100px;
+    background-color: transparent; /* No background */
+    border: none; /* Remove button outline */
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: none; /* Remove shadow */
-    transition: all 0.2s ease; /* Smooth transition on hover/active */
-    outline: none; /* Completely removes focus outline */
-}
+    cursor: pointer;
+    outline: none !important; /* Remove focus outline */
+  }
   
-.control-button svg {
-    display: block;
-    width: 36px; /* Adjusted size to fit inside the button */
-    height: 36px;
-    fill: transparent; /* Transparent fill */
-    stroke: black; /* Black outline for shapes */
-    stroke-width: 2; /* Stroke width matches button border width */
-}
+  .control-button svg {
+    width: 70px; /* Enlarged SVG size */
+    height: 70px;
+  }
   
-.control-button:hover {
-    background-color: transparent; /* No hover background */
-    border-color: gray; /* Slightly lighter outline on hover */
-}
+  .control-button svg polygon {
+    fill: none;
+    stroke: black;
+    stroke-width: 4;
+  }
   
-.control-button:active {
-    background-color: transparent; /* No active background */
-    border-color: black; /* Retain black outline on active */
-}
+  /* Consistent button design on hover and active states */
+  .control-button:hover,
+  .control-button:active {
+    background-color: transparent;
+    border: none; /* Ensure no border on hover/active */
+    outline: none; /* Remove any outline */
+  }
+  
